@@ -48,7 +48,7 @@
         </navigator>
       </swiper>
     </view>
-    <scroll-view scroll-x>
+    <scroll-view scroll-x class="scrollContainer">
       <view class="category-box" style='width:{{category_box_width}}rpx;'>
         <view class="category-list" wx:for="{{categories}}" wx:if="{{index%2===0}}" wx:key="*this">
           <view class="category-column {{activeCategoryId == categories[index].id ? 'type-item-on' : ''}}" bindtap="tabClick" id="{{categories[index].id}}">

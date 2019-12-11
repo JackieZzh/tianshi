@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
   /**
@@ -126,6 +126,7 @@ Page({
     wx.login({
       success: function(res) {
         let code = res.code; // 微信登录接口返回的 code 参数，下面注册接口需要用到
+        console.log(code)
         wx.getUserInfo({
           success: function(res) {
             let iv = res.iv;

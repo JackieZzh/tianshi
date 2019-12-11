@@ -39,6 +39,7 @@ App({
      * 可根据业务需求进行调整
      */
     wx.onNetworkStatusChange(function(res) {
+      console.log(res)
       if (!res.isConnected) {
         that.globalData.isConnected = false
         wx.showToast({
@@ -58,6 +59,8 @@ App({
     WXAPI.vipLevel().then(res => {
       that.globalData.vipLevel = res.data
     })
+
+    console.log(that.globalData.vipLevel)
     //  获取商城名称
     WXAPI.queryConfig({
       key: 'mallName'
@@ -86,6 +89,7 @@ App({
     if (this.navigateToLogin){
       return
     }
+    
     wx.removeStorageSync('token')
     this.navigateToLogin = true
     setTimeout(function() {
